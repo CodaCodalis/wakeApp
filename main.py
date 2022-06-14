@@ -5,10 +5,14 @@
 from Menu import Menu
 
 # Press the green button in the gutter to run the script.
+from view.frame import Frame
+
 if __name__ == '__main__':
-    menu = Menu()
-    while True:
-        menu.banner()
-        menu.data_query()
+    #menu = Menu()
+    #while True:
+    #    menu.banner()
+    #    menu.data_query()
+    frame = Frame(1, 0)
+    frame.idk_yet()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
