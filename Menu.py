@@ -20,7 +20,7 @@ class Menu:
             print("Eingabe Wiederholen:")
 
     def banner(self):
-        welcomeMes = "###### Herzlich Willkommen zur WakeApp Terminal App ######"
-        print(welcomeMes)
-        print("-" * len(welcomeMes) + "\n")
+        welcome_mes = "###### Herzlich Willkommen zur WakeApp Terminal App ######"
+        print(welcome_mes)
+        print("-" * len(welcome_mes) + "\n")
         print("Gib die benötigten Daten ein.\n")
