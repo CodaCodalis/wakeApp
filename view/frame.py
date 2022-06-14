@@ -57,12 +57,20 @@ class Frame(Tk):
         self.__entry_delay.delete(0, END)
 
     def __calculate(self):
-        time = Time(self.__entry_arrival_time.get(),
-                    self.__entry_duration.get(),
-                    self.__entry_prep_time.get(),
-                    self.__entry_delay.get())
-        get_up_time = WakeController.computation(time)
-        get_up_msg = "Sie müssen um " + str(get_up_time) + " aufstehen!"
-        tkinter.messagebox.showinfo(title="Aufstehzeit", message=get_up_msg)
-        self.__clear_entries()
-
+        try:
+            time = Time(self.__entry_arrival_time.get(),
+                        self.__entry_duration.get(),
+                        self.__entry_prep_time.get(),
+                        self.__entry_delay.get())
+            get_up_time = WakeController.computation(time)
+            get_up_msg = "Sie müssen um " + str(get_up_time) + " aufstehen!"
+            tkinter.messagebox.showinfo(title="Aufstehzeit", message=get_up_msg)
+            self.__clear_entries()
+        except ValueError:
+            error_msg = "Mindestens eine Eingabe ist fehlerhaft und entspricht nicht dem vorgegebenen Format (hh:mm)!" \
+                        "\nEingaben Wiederholen:"
+            tkinter.messagebox.showerror(title="Error", message=error_msg)
+        except IndexError:
+            error_msg = "Mindestens eine Eingabe ist fehlerhaft und entspricht nicht dem vorgegebenen Format (hh:mm)!" \
+                        "\nEingaben Wiederholen:"
+            tkinter.messagebox.showerror(title="Error", message=error_msg)
