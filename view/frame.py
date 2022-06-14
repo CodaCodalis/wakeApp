@@ -1,13 +1,15 @@
+import tkinter.messagebox
 from tkinter import *
+
+import WakeController
+from Time import Time
 
 
 class Frame(Tk):
 
-    def __init__(self, time, wakeController):
+    def __init__(self):
         super().__init__()
 
-        self.__time = time
-        self.__wakeController = wakeController
         self.columnconfigure(0, weight=1)
 
     def idk_yet(self):
@@ -55,4 +57,12 @@ class Frame(Tk):
         self.__entry_delay.delete(0, END)
 
     def __calculate(self):
-        pass
+        time = Time(self.__entry_arrival_time.get(),
+                    self.__entry_duration.get(),
+                    self.__entry_prep_time.get(),
+                    self.__entry_delay.get())
+        get_up_time = WakeController.computation(time)
+        get_up_msg = "Sie müssen um " + str(get_up_time) + " aufstehen!"
+        tkinter.messagebox.showinfo(title="Aufstehzeit", message=get_up_msg)
+        self.__clear_entries()
+
