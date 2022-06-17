@@ -12,7 +12,8 @@ class Frame(Tk):
         super().__init__()
         self.__background = "#00CED1"
         self.columnconfigure(0, weight=1)
-        self.rowconfigure(0, weight=1)
+        self.rowconfigure(0, weight=0)
+
 
     def idk_yet(self):
         self.title("WakeApp")
