@@ -1,5 +1,5 @@
-from Time import *
-from WakeController import computation
+from model.Time import *
+from controller.WakeController import computation
 
 
 class Menu:

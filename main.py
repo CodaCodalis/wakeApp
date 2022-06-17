@@ -2,7 +2,7 @@
 
 # Press Umschalt+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-from Menu import Menu
+from view.Menu import Menu
 
 # Press the green button in the gutter to run the script.
 from view.frame import Frame

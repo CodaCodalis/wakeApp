@@ -2,8 +2,8 @@ import tkinter
 import tkinter.messagebox
 from tkinter import *
 
-import WakeController
-from Time import Time
+from controller import WakeController
+from model.Time import Time
 
 
 class Frame(Tk):
