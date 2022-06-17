@@ -1,10 +1,14 @@
 class Time:
 
     def __init__(self, arrival_time, duration, prep_time, delay):
+        
         self.__arrival_time = self.__convert_time_to_int(arrival_time)
         self.__duration = self.__convert_time_to_int(duration)
         self.__prep_time = self.__convert_time_to_int(prep_time)
         self.__delay = self.__convert_time_to_int(delay)
+        if self.__arrival_time < 0 or self.__duration < 0 or self.__prep_time < 0 or self.__delay < 0:
+            raise ValueError
+
 
     def __convert_time_to_int(self, time):
         hours = float(time.split(':')[0])
