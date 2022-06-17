@@ -12,6 +12,7 @@ class Frame(Tk):
         super().__init__()
         self.__background = "#00CED1"
         self.columnconfigure(0, weight=1)
+        self.rowconfigure(0, weight=1)
 
     def idk_yet(self):
         self.title("WakeApp")
@@ -76,7 +77,7 @@ class Frame(Tk):
                         self.__entry_delay.get())
             get_up_time = WakeController.computation(time)
             get_up_msg = "Sie müssen um " + str(get_up_time) + " aufstehen!"
-            tkinter.messagebox.showinfo(title="Aufstehzeit", message=get_up_msg, bg=self.__background)
+            tkinter.messagebox.showinfo(title="Aufstehzeit", message=get_up_msg)
             self.__clear_entries()
         except ValueError:
             error_msg = "Mindestens eine Eingabe ist fehlerhaft und entspricht nicht dem vorgegebenen Format (hh:mm)!" \
